@@ -1,0 +1,33 @@
+# Ignore build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.seed
+
+# Python virtual environments
+venv/
+ENV/
+
+# Ollama/AI model files
+models/

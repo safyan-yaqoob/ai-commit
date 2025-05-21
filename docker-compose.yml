@@ -1,0 +1,21 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"  # Expose Ollama API port that matches your Program.cs OllamaApiEndpoint
+    volumes:
+      - ollama_data:/root/.ollama  # Persist models
+    environment:
+      - OLLAMA_MODELS=/root/.ollama  # Set models directory
+    deploy:
+      resources:
+        limits:
+          memory: 6G  # Set memory limit to 6GB for small model
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  ollama_data:    # Named volume to persist models between container restarts

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ai_commit": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
